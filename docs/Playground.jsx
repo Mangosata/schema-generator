@@ -25,7 +25,7 @@ const Demo = () => {
       <Generator
         ref={ref}
         defaultValue={defaultValue}
-        extraButtons={[{ text: '去playground验证', onClick }]}
+        extraButtons={[{ text: 'Go to playground', onClick }]}
       />
     </div>
   );

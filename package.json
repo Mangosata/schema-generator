@@ -1,5 +1,5 @@
 {
-  "name": "fr-generator",
+  "name": "fr-generator-en",
   "version": "1.0.0",
   "scripts": {
     "start": "dumi dev",
@@ -54,5 +54,19 @@
     "prettier": "^1.19.1",
     "rollup-plugin-commonjs": "^10.1.0",
     "yorkie": "^2.0.0"
-  }
+  },
+  "description": "<img src=\"https://gw.alipayobjects.com/mdn/rms_e18934/afts/img/A*4QYNTbKU6xAAAAAAAAAAAABkARQnAQ?raw=true\" width=\"750px\"/>",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mangosata/schema-generator.git"
+  },
+  "author": "sata",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mangosata/schema-generator/issues"
+  },
+  "homepage": "https://github.com/Mangosata/schema-generator#readme"
 }

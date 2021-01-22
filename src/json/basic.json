@@ -3,13 +3,13 @@
     "type": "object",
     "properties": {
       "objectName": {
-        "title": "对象",
-        "description": "这是一个对象类型",
+        "title": "Object",
+        "description": "This is a object type",
         "type": "object",
         "properties": {}
       },
       "allString": {
-        "title": "string类",
+        "title": "String Class",
         "type": "object",
         "properties": {
           "input": {

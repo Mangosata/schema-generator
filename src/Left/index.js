@@ -27,14 +27,14 @@ const Left = ({ saveList, setSaveList, ...rest }) => {
                     );
                   })
                 ) : (
-                  <div>此处配置有误</div>
+                  <div>This config is wrong</div>
                 )}
               </ul>
             </div>
           );
         })
       ) : (
-        <div>配置错误：Setting不是数组</div>
+        <div>Config Error: Setting is not an array</div>
       )}
     </div>
   );

@@ -1,27 +1,25 @@
-// 只需写配置，方便可扩展
 export const defaultCommonSettings = {
   $id: {
     title: 'ID',
-    description: '数据存储的名称/英文/必填',
     type: 'string',
     'ui:widget': 'idInput',
   },
   title: {
-    title: '标题',
+    title: 'Title',
     type: 'string',
   },
   description: {
-    title: '说明',
+    title: 'Description',
     type: 'string',
   },
   'ui:width': {
-    title: '元素宽度',
+    title: 'Element Width',
     type: 'string',
     'ui:widget': 'percentSlider',
   },
   'ui:labelWidth': {
-    title: '标签宽度',
-    description: '默认值120',
+    title: 'Label Width',
+    description: 'Default 120',
     type: 'number',
     'ui:widget': 'slider',
     max: 400,
@@ -30,187 +28,185 @@ export const defaultCommonSettings = {
     },
   },
   default: {
-    title: '默认值',
+    title: 'Default Value',
     type: 'string',
   },
   'ui:readonly': {
-    title: '置灰',
+    title: 'Read Only',
     type: 'boolean',
   },
 };
 
 // widget 用于schema中每个元素对应的右侧配置知道用哪个setting
-
 export const elements = [
   {
-    text: '输入框',
+    text: 'Single Input',
     name: 'input',
     widget: 'input',
     schema: {
-      title: '输入框',
+      title: 'Input',
       type: 'string',
     },
     setting: {
       'ui:options': {
-        title: '选项',
+        title: 'Options',
         type: 'object',
         'ui:labelWidth': 80,
         properties: {
           allowClear: {
-            title: '是否带清除按钮',
-            description: '填写内容后才会出现x哦',
+            title: 'Clear Button',
             type: 'boolean',
           },
           addonBefore: {
-            title: '前tab',
+            title: 'Addon Before',
             type: 'string',
           },
           addonAfter: {
-            title: '后tab',
+            title: 'Addon After',
             type: 'string',
           },
           prefix: {
-            title: '前缀',
+            title: 'Prefix',
             type: 'string',
           },
           suffix: {
-            title: '后缀',
+            title: 'Suffix',
             type: 'string',
           },
         },
       },
       minLength: {
-        title: '最短字数',
+        title: 'Min Length',
         type: 'number',
       },
       maxLength: {
-        title: '最长字数',
+        title: 'Max Length',
         type: 'number',
       },
       pattern: {
-        title: '校验正则表达式',
+        title: 'Regex Pattern',
         type: 'string',
         'ui:options': {
-          placeholder: '填写正则表达式',
+          placeholder: 'Please fill regex',
         },
       },
     },
   },
   {
-    text: '大输入框',
+    text: 'Multiple Input',
     name: 'textarea',
     widget: 'textarea',
     schema: {
-      title: '编辑框',
+      title: 'TextArea',
       type: 'string',
       format: 'textarea',
     },
     setting: {
       'ui:options': {
-        title: '选项',
+        title: 'Options',
         type: 'object',
         'ui:labelWidth': 80,
         properties: {
           autoSize: {
-            title: '高度自动',
+            title: 'Auto Size',
             type: 'boolean',
           },
           row: {
-            title: '指定高度',
+            title: 'Rows',
             type: 'number',
           },
         },
       },
       minLength: {
-        title: '最短字数',
+        title: 'Min Length',
         type: 'number',
       },
       maxLength: {
-        title: '最长字数',
+        title: 'Max Length',
         type: 'number',
       },
       pattern: {
-        title: '校验正则表达式',
+        title: 'Regex Pattern',
         type: 'string',
         'ui:options': {
-          placeholder: '填写正则表达式',
+          placeholder: 'Please fill regex',
         },
       },
     },
   },
 
   {
-    text: '日期选择',
+    text: 'Date',
     name: 'date',
     widget: 'date',
     schema: {
-      title: '日期选择',
+      title: 'Date',
       type: 'string',
       format: 'date',
     },
     setting: {
       format: {
-        title: '格式',
+        title: 'Format',
         type: 'string',
         enum: ['dateTime', 'date', 'time'],
-        enumNames: ['日期时间', '日期', '时间'],
+        enumNames: ['Date Time', 'Date', 'Time'],
       },
     },
   },
   {
-    text: '数字输入框',
+    text: 'Number Input',
     name: 'number',
     widget: 'number',
     schema: {
-      title: '数字输入框',
+      title: 'Number Input',
       type: 'number',
     },
     setting: {},
   },
   {
-    text: '是否选择',
+    text: 'Checkbox',
     name: 'checkbox',
     widget: 'checkbox',
     schema: {
-      title: '是否选择',
+      title: 'Checkbox',
       type: 'boolean',
     },
     setting: {
       default: {
-        title: '是否默认勾选',
+        title: 'Default Check',
         type: 'boolean',
       },
     },
   },
   {
-    text: '是否switch',
+    text: 'Switch',
     name: 'switch',
     widget: 'switch',
     schema: {
-      title: '是否选择',
+      title: 'Switch',
       type: 'boolean',
       'ui:widget': 'switch',
     },
     setting: {
       default: {
-        title: '是否默认开启',
+        title: 'Default Open',
         type: 'boolean',
       },
     },
   },
   {
-    text: '下拉单选',
+    text: 'Select',
     name: 'select',
     widget: 'select',
     schema: {
-      title: '单选',
+      title: 'Select',
       type: 'string',
       enum: ['a', 'b', 'c'],
-      enumNames: ['早', '中', '晚'],
+      enumNames: ['A', 'B', 'C'],
     },
     setting: {
       enum: {
-        title: '选项字段',
+        title: 'Options',
         type: 'array',
         enum: [],
         'ui:widget': 'select',
@@ -219,7 +215,7 @@ export const elements = [
         },
       },
       enumNames: {
-        title: '选项名称',
+        title: 'Option Name',
         type: 'array',
         enum: [],
         'ui:widget': 'select',
@@ -230,19 +226,19 @@ export const elements = [
     },
   },
   {
-    text: '点击单选',
+    text: 'Radio',
     name: 'radio',
     widget: 'radio',
     schema: {
-      title: '单选',
+      title: 'Radio',
       type: 'string',
       enum: ['a', 'b', 'c'],
-      enumNames: ['早', '中', '晚'],
+      enumNames: ['A', 'B', 'C'],
       'ui:widget': 'radio',
     },
     setting: {
       enum: {
-        title: '选项字段',
+        title: 'Options',
         type: 'array',
         enum: [],
         'ui:widget': 'select',
@@ -251,7 +247,7 @@ export const elements = [
         },
       },
       enumNames: {
-        title: '选项名称',
+        title: 'Option Name',
         type: 'array',
         enum: [],
         'ui:widget': 'select',
@@ -262,23 +258,23 @@ export const elements = [
     },
   },
   {
-    text: '下拉多选',
+    text: 'MultiSelect',
     name: 'multiSelect',
     widget: 'multiSelect',
     schema: {
-      title: '多选',
-      description: '下拉多选',
+      title: 'MultiSelect',
+      description: 'MultiSelect',
       type: 'array',
       items: {
         type: 'string',
       },
       enum: ['A', 'B', 'C', 'D'],
-      enumNames: ['杭州', '武汉', '湖州', '贵阳'],
+      enumNames: ['A', 'B', 'C', 'D'],
       'ui:widget': 'multiSelect',
     },
     setting: {
       enum: {
-        title: '选项字段',
+        title: 'Options',
         type: 'array',
         enum: [],
         'ui:widget': 'select',
@@ -287,7 +283,7 @@ export const elements = [
         },
       },
       enumNames: {
-        title: '选项名称',
+        title: 'Option Name',
         type: 'array',
         enum: [],
         'ui:widget': 'select',
@@ -298,22 +294,22 @@ export const elements = [
     },
   },
   {
-    text: '点击多选',
+    text: 'Checkboxes',
     name: 'checkboxes',
     widget: 'checkboxes',
     schema: {
-      title: '多选',
-      description: '点击多选',
+      title: 'Checkboxes',
+      description: 'Click to choose multiple',
       type: 'array',
       items: {
         type: 'string',
       },
       enum: ['A', 'B', 'C', 'D'],
-      enumNames: ['杭州', '武汉', '湖州', '贵阳'],
+      enumNames: ['A', 'B', 'C', 'D'],
     },
     setting: {
       enum: {
-        title: '选项字段',
+        title: 'Options',
         type: 'array',
         enum: [],
         'ui:widget': 'select',
@@ -322,7 +318,7 @@ export const elements = [
         },
       },
       enumNames: {
-        title: '选项名称',
+        title: 'Option Name',
         type: 'array',
         enum: [],
         'ui:widget': 'select',
@@ -336,54 +332,54 @@ export const elements = [
 
 export const advancedElements = [
   {
-    text: '日期范围',
+    text: 'Date Range',
     name: 'dateRange',
     widget: 'dateRange',
     schema: {
-      title: '日期范围',
+      title: 'Date Range',
       type: 'range',
       format: 'dateTime',
       'ui:options': {
-        placeholder: ['开始时间', '结束时间'],
+        placeholder: ['Start', 'End'],
       },
     },
     setting: {
       format: {
-        title: '类型',
+        title: 'Type',
         type: 'string',
         enum: ['dateTime', 'date'],
-        enumNames: ['日期时间', '日期'],
+        enumNames: ['Date Time', 'Date'],
       },
     },
   },
   {
-    text: '数字（slider）',
+    text: 'Slider(Number)',
     name: 'slider',
     widget: 'slider',
     schema: {
-      title: '带滑动条',
+      title: 'Slider',
       type: 'number',
       'ui:widget': 'slider',
     },
     setting: {},
   },
   {
-    text: '图片展示',
+    text: 'Image',
     name: 'image',
     // widget: 'input',
     schema: {
-      title: '图片展示',
+      title: 'Image',
       type: 'string',
       format: 'image',
     },
     setting: {},
   },
   {
-    text: '颜色选择',
+    text: 'Color',
     name: 'color',
     widget: 'color',
     schema: {
-      title: '颜色选择',
+      title: 'Color',
       type: 'string',
       format: 'color',
     },
@@ -393,10 +389,10 @@ export const advancedElements = [
 
 export const layouts = [
   {
-    text: 'object',
+    text: 'Object',
     name: 'object',
     schema: {
-      title: '对象',
+      title: 'Object',
       type: 'object',
       properties: {},
     },
@@ -404,11 +400,11 @@ export const layouts = [
     setting: {},
   },
   {
-    text: '列表',
+    text: 'List',
     name: 'list',
     widget: 'list',
     schema: {
-      title: '数组',
+      title: 'List',
       type: 'array',
       items: {
         type: 'object',
@@ -417,19 +413,19 @@ export const layouts = [
     },
     setting: {
       minItems: {
-        title: '最小长度',
+        title: 'Min Items',
         type: 'number',
       },
       maxItems: {
-        title: '最大长度',
+        title: 'Max Items',
         type: 'number',
       },
       'ui:options': {
-        title: '选项',
+        title: 'Options',
         type: 'object',
         properties: {
           foldable: {
-            title: '是否可折叠',
+            title: 'Foldable',
             type: 'boolean',
           },
         },
@@ -438,88 +434,88 @@ export const layouts = [
   },
 ];
 
-const saves = [
-  {
-    text: '复杂结构样例',
-    name: 'something',
-    schema: {
-      title: '对象',
-      description: '这是一个对象类型',
-      type: 'object',
-      properties: {
-        inputName: {
-          title: '简单输入框',
-          type: 'string',
-        },
-        selectName: {
-          title: '单选',
-          type: 'string',
-          enum: ['a', 'b', 'c'],
-          enumNames: ['早', '中', '晚'],
-        },
-        dateName: {
-          title: '时间选择',
-          type: 'string',
-          format: 'date',
-        },
-        listName: {
-          title: '对象数组',
-          description: '对象数组嵌套功能',
-          type: 'array',
-          items: {
-            type: 'object',
-            properties: {
-              rangeName: {
-                title: '日期/时间范围',
-                type: 'range',
-                format: 'date',
-                'ui:options': {
-                  placeholder: ['开始日期', '结束日期'],
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-];
+// const saves = [
+//   {
+//     text: '复杂结构样例',
+//     name: 'something',
+//     schema: {
+//       title: '对象',
+//       description: '这是一个对象类型',
+//       type: 'object',
+//       properties: {
+//         inputName: {
+//           title: '简单输入框',
+//           type: 'string',
+//         },
+//         selectName: {
+//           title: '单选',
+//           type: 'string',
+//           enum: ['a', 'b', 'c'],
+//           enumNames: ['早', '中', '晚'],
+//         },
+//         dateName: {
+//           title: '时间选择',
+//           type: 'string',
+//           format: 'date',
+//         },
+//         listName: {
+//           title: '对象数组',
+//           description: '对象数组嵌套功能',
+//           type: 'array',
+//           items: {
+//             type: 'object',
+//             properties: {
+//               rangeName: {
+//                 title: '日期/时间范围',
+//                 type: 'range',
+//                 format: 'date',
+//                 'ui:options': {
+//                   placeholder: ['开始日期', '结束日期'],
+//                 },
+//               },
+//             },
+//           },
+//         },
+//       },
+//     },
+//   },
+// ];
 
 export const defaultSettings = [
   {
-    title: '基础组件',
+    title: 'Basic',
     widgets: elements,
     show: true,
     useCommon: true, // TODO: 是否将common
   },
   {
-    title: '高级组件',
+    title: 'Advance',
     widgets: advancedElements,
   },
   {
-    title: '布局组件',
+    title: 'Layouts',
     widgets: layouts,
   },
-  {
-    title: '模板',
-    widgets: saves,
-  },
+  // {
+  //   title: 'Templates',
+  //   widgets: saves,
+  // },
 ];
 
 export const defaultGlobalSettings = {
   type: 'object',
   properties: {
     column: {
-      title: '整体布局',
+      title: 'Overall Layout',
       type: 'string',
       enum: [1, 2, 3],
-      enumNames: ['一行一列', '一行二列', '一行三列'],
+      enumNames: ['One Column', 'Two Columns', 'Three Columns'],
       'ui:options': {
-        placeholder: '默认一行一列',
+        placeholder: 'Default is One Column',
       },
     },
     labelWidth: {
-      title: '标签宽度',
+      title: 'Label Width',
       type: 'number',
       'ui:widget': 'slider',
       max: 300,
@@ -528,10 +524,10 @@ export const defaultGlobalSettings = {
       },
     },
     displayType: {
-      title: '标签展示模式',
+      title: 'Display Type',
       type: 'string',
       enum: ['row', 'column'],
-      enumNames: ['同行', '单独一行'],
+      enumNames: ['Same Row', 'Individual Row'],
       'ui:widget': 'radio',
     },
   },

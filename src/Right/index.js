@@ -51,11 +51,11 @@ export default function Right() {
       <ToggleIcon />
       <Tabs defaultActiveKey="1" onChange={() => {}}>
         {showItemSettings && (
-          <TabPane tab="组件配置" key="1">
+          <TabPane tab="Component Configuration" key="1">
             <ItemSettings />
           </TabPane>
         )}
-        <TabPane tab="表单配置" key={showItemSettings ? '2' : '1'}>
+        <TabPane tab="Form Configuration" key={showItemSettings ? '2' : '1'}>
           <GlobalSettings />
         </TabPane>
       </Tabs>

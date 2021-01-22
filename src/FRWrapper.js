@@ -127,7 +127,7 @@ function Wrapper(
         frProps: { ...state.frProps, ...rest },
       }));
     } catch (error) {
-      message.info('格式不对哦，请重新尝试'); // 可以加个格式哪里不对的提示
+      message.info('Format error, please retry'); // 可以加个格式哪里不对的提示
     }
     toggleModal2();
   };
@@ -154,7 +154,7 @@ function Wrapper(
 
   const copySchema = () => {
     copyTOClipboard(displaySchemaString);
-    message.info('复制成功');
+    message.info('Copied successfully');
     toggleModal();
   };
 
@@ -209,7 +209,7 @@ function Wrapper(
       setSaveList([...saveList, { text, name, schema }]);
       toggleModal3();
     } catch (error) {
-      message.error('保存失败');
+      message.error('Saved failed');
     }
   };
 
@@ -253,12 +253,12 @@ function Wrapper(
                     setGlobal({ preview: !preview, selected: '#' });
                   }}
                 >
-                  {preview ? '开始编辑' : '最终展示'}
+                  {preview ? 'Edit' : 'Review'}
                 </Button>
               )}
               {_showDefaultBtns[1] !== false && (
                 <Button className="mr2" onClick={clearSchema}>
-                  清空
+                  Clear
                 </Button>
               )}
               {/* <Button className="mr2" onClick={toggleModal3}>
@@ -266,12 +266,12 @@ function Wrapper(
                 </Button> */}
               {_showDefaultBtns[2] !== false && (
                 <Button className="mr2" onClick={toggleModal2}>
-                  导入
+                  Import
                 </Button>
               )}
               {_showDefaultBtns[3] !== false && (
                 <Button type="primary" className="mr2" onClick={toggleModal}>
-                  导出schema
+                  Export Schema
                 </Button>
               )}
               {_extraBtns.map((item, idx) => {
@@ -295,8 +295,8 @@ function Wrapper(
             visible={local.showModal}
             onOk={copySchema}
             onCancel={toggleModal}
-            okText="复制"
-            cancelText="取消"
+            okText="Copy"
+            cancelText="Cancel"
           >
             <div className="mt3">
               <TextArea
@@ -308,8 +308,8 @@ function Wrapper(
           </Modal>
           <Modal
             visible={local.showModal2}
-            okText="导入"
-            cancelText="取消"
+            okText="Import"
+            cancelText="Cancel"
             onOk={importSchema}
             onCancel={toggleModal2}
           >
@@ -317,7 +317,7 @@ function Wrapper(
               <TextArea
                 style={{ fontSize: 12 }}
                 value={local.schemaForImport}
-                placeholder="贴入需要导入的schema，模样可点击导出schema参考"
+                placeholder="Please give the schema to be imported"
                 onChange={onTextareaChange}
                 autoSize={{ minRows: 10, maxRows: 30 }}
               />
@@ -325,16 +325,16 @@ function Wrapper(
           </Modal>
           <Modal
             visible={local.showModal3}
-            okText="确定"
-            cancelText="取消"
+            okText="Ok"
+            cancelText="Cancel"
             onOk={saveSchema}
             onCancel={toggleModal3}
           >
             <div className="mt4 flex items-center">
-              <div style={{ width: 100 }}>保存名称：</div>
+              <div style={{ width: 100 }}>Saved name:</div>
               <div style={{ width: 280 }}>
                 <Input
-                  defaultValue={'存档' + getSaveNumber()}
+                  defaultValue={'Archive' + getSaveNumber()}
                   ref={saveNameRef}
                 />
               </div>

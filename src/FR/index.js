@@ -115,7 +115,7 @@ const FR = ({ id = '#', preview = false }) => {
         <div
           className={`${containerClass} h-100 f4 black-40 flex items-center justify-center`}
         >
-          点击/拖拽左侧栏的组件进行添加
+          Click or Drag From Left Sidebar
         </div>
       </Wrapper>
     );
