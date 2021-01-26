@@ -3,7 +3,7 @@ import Generator, {
   defaultSettings,
   defaultCommonSettings,
   defaultGlobalSettings,
-} from 'fr-generator';
+} from 'fr-generator-en';
 
 const NewWidget = ({ value = 0, onChange }) => (
   <button onClick={() => onChange(value + 1)}>{value}</button>

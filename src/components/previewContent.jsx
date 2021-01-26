@@ -7,7 +7,7 @@ export default (format, value) => {
   return format === 'image' ? (
     <img
       src={value || defaultImg}
-      alt="图片地址错误"
+      alt="Image adress is wrong"
       className="fr-preview-image"
     />
   ) : null;

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import Generator, { fromFormily, toFormily } from 'fr-generator';
+import Generator, { fromFormily, toFormily } from 'fr-generator-en';
 import { Button, Modal, Input } from 'antd';
 const { TextArea } = Input;
 

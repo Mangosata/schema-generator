@@ -26,7 +26,7 @@ export default function input(p) {
     <div className="fr-upload-mod">
       <Upload {...props} className="fr-upload-file">
         <Button>
-          <UploadOutlined /> 上传
+          <UploadOutlined /> Upload
         </Button>
       </Upload>
       {p.value && (
@@ -36,7 +36,7 @@ export default function input(p) {
           rel="noopener noreferrer"
           className="fr-upload-preview"
         >
-          已上传地址
+          Uploaded Address
         </a>
       )}
     </div>

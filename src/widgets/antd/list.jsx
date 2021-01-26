@@ -90,7 +90,7 @@ class listItem extends React.Component {
                 p.onChange(value);
               }}
             >
-              删除
+              Delete
             </FrButton>
             {itemButtons &&
               itemButtons.length > 0 &&
@@ -162,7 +162,7 @@ class fieldList extends React.Component {
           <div className='tr'>
             {canAdd && (
               <FrButton icon='add' onClick={this.handleAddClick}>
-                新增
+                Add
               </FrButton>
             )}
             {buttons &&

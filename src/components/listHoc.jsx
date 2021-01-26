@@ -89,7 +89,7 @@ const listItemHoc = (ButtonComponent) =>
                   p.onChange(value);
                 }}
               >
-                删除
+                Delete
               </ButtonComponent>
               {itemButtons &&
                 itemButtons.length > 0 &&
@@ -165,7 +165,7 @@ const fieldListHoc = (ButtonComponent) => {
             <div className="tr">
               {canAdd && (
                 <ButtonComponent icon="add" onClick={this.handleAddClick}>
-                  新增
+                  Add
                 </ButtonComponent>
               )}
               {buttons &&

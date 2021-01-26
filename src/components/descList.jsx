@@ -58,9 +58,9 @@ export const getDescription = ({ schema = {}, value = [], index }) => {
     if (text === null && text === undefined) {
       text = '';
     } else if (typeof text === 'boolean') {
-      text = text ? '是' : '否';
+      text = text ? 'Yes' : 'No';
     } else if (typeof text !== 'string' && typeof text !== 'number' && text) {
-      text = '{复杂结构}';
+      text = '{Complex Structure}';
     } else if (t.enum && t.enumNames) {
       text = getEnumValue(text, t.enum, t.enumNames);
     }
